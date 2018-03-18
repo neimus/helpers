@@ -10,8 +10,6 @@ class StringHelper
      * Метод возвращает средний символ из текста (длина текста не может превышать 1000 символов)
      * Если длина слова нечетна, вернет средний символ. Если длина слова четная, вернет средние 2 символа.
      *
-     * https://www.codewars.com/kata/get-the-middle-character/php
-     *
      * @param string $text
      *
      * @return string
