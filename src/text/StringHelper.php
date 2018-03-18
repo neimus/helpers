@@ -27,6 +27,6 @@ class StringHelper
             return $text[(int)($length / 2)];
         }
 
-        throw new OutOfRangeException('Символов в строке должно быть от 0 до 1000');
+        throw new OutOfRangeException('Символов в строке должно быть не более 1000');
     }
 }
