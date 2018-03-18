@@ -16,15 +16,14 @@ class StringHelper
      *
      * @return string
      *
-     * @throws \OutOfRangeException если символов в строке меньше 1 или больше 1000
+     * @throws \OutOfRangeException если символов в строке больше 1000
      */
     public function getMiddleCharacter(string $text): string
     {
-        $length = \strlen($text);
-        if ($length > 0 && $length <= 1000) {
-
+        $length = \mb_strlen($text);
+        if ($length <= 1000) {
             if ($length % 2 === 0) {
-                return substr($text, $length / 2 - 1, 2);
+                return mb_substr($text, $length / 2 - 1, 2);
             }
 
             return $text[(int)($length / 2)];
