@@ -29,4 +29,21 @@ class StringHelper
 
         throw new OutOfRangeException('Символов в строке должно быть не более 1000');
     }
+
+    /**
+     * Простой метод, который удаляет первый и последний символ в строке
+     *
+     * @param string $text
+     *
+     * @return string
+     */
+    public function removeFirstAndLastChar(string $text): string
+    {
+        $length = \mb_strlen($text);
+        if ($length > 2) {
+            return mb_substr($text, 1, $length - 2);
+        }
+
+        return '';
+    }
 }

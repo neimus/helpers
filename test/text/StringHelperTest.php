@@ -46,4 +46,17 @@ class StringHelperTest extends TestCase
     {
         $this->classTest->getMiddleCharacter(str_repeat('A', 1001));
     }
+
+    public function testRemoveFirstAndLastChar(): void
+    {
+        $this->assertEquals('loquen', $this->classTest->removeFirstAndLastChar('eloquent'));
+        $this->assertEquals('русский', $this->classTest->removeFirstAndLastChar('АрусскийА'));
+        $this->assertEquals('ountr', $this->classTest->removeFirstAndLastChar('country'));
+        $this->assertEquals('erso', $this->classTest->removeFirstAndLastChar('person'));
+        $this->assertEquals('lac', $this->classTest->removeFirstAndLastChar('place'));
+        $this->assertEquals('d', $this->classTest->removeFirstAndLastChar('odd'));
+        $this->assertEquals('', $this->classTest->removeFirstAndLastChar('it'));
+        $this->assertEquals('', $this->classTest->removeFirstAndLastChar(''));
+        $this->assertEquals('9', $this->classTest->removeFirstAndLastChar(0x255));
+    }
 }
